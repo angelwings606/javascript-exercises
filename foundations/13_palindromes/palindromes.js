@@ -1,8 +1,6 @@
-const palindromes = function (arr) {
-    const tempA = arr.slice(Math.floor(arr.length/2));
-    const tempB = arr.slice(0,Math.ceil(arr.length/2));
-    const reversed = tempB.slice().reverse();
-    return tempA === reversed;
+const palindromes = function (str) {
+    const noPunct = str.replace(/[^\p{L}\p{N}\s]/gu, '').toLowerCase().replace(/\s/g, '');
+    return noPunct === noPunct.split('').reverse().join('');
 };
 
 // Do not edit below this line
